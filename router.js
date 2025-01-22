@@ -6,7 +6,11 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', async (req, res) =>{
-    const allEntries = await prisma.records.findMany()
+    const allEntries = await prisma.records.findMany({
+        orderBy: {
+            timeRecord: 'asc'
+        }
+    })
     res.json({message:allEntries})
 })
 

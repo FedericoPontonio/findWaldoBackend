@@ -7,5 +7,9 @@ Content-Type: application/json
 
 {
     "username" : "federer",
-    "timeRecord": 407.3333333
+    "timeRecord": 1.2223,
+    "gameSelected": 1
 }
+
+###
+GET https://findwaldobackend.onrender.com
