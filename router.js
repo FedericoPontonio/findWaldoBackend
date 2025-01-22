@@ -14,7 +14,8 @@ router.post('/', async (req, res) => {
     await prisma.records.create({
         data:{
             username: req.body.username,
-            timeRecord: req.body.timeRecord
+            timeRecord: req.body.timeRecord,
+            gameSelected: req.body.gameSelected
         }
     })
     res.json({message:"success"})
