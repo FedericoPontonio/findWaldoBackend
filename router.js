@@ -5,8 +5,11 @@ const prisma = new PrismaClient()
 const express = require('express')
 const router = express.Router()
 
-router.get('/', async (req, res) =>{
+router.get('/:currentGame', async (req, res) =>{
     const allEntries = await prisma.records.findMany({
+        where: {
+            gameSelected: +req.params.currentGame
+        },
         orderBy: {
             timeRecord: 'asc'
         }
